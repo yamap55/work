@@ -29,7 +29,7 @@ import groovy.sql.Sql
 class WebApiResource {
 
   @GET
-  @Path("/test")
+  @Path("/projectlist")
   @Produces(MediaType.APPLICATION_JSON)
   public List<ResultDto> testJson(@QueryParam("userid") int userid) {
     def dbServer = 'localhost'
