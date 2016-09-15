@@ -17,21 +17,25 @@ import org.eclipse.jetty.server.Server
 
 
 /** */
+import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.GET
+import javax.ws.rs.DefaultValue
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
 import javax.ws.rs.QueryParam
-import javax.ws.rs.core.MediaType
 import groovy.sql.Sql
 
+import com.sun.jersey.api.json.JSONWithPadding
 
 @Path("/")
 class WebApiResource {
 
   @GET
   @Path("/projectlist")
-  @Produces(MediaType.APPLICATION_JSON)
-  public List<ResultDto> testJson(@QueryParam("userid") int userid) {
+  @Produces("application/javascript")
+  public JSONWithPadding testJson(
+      @QueryParam("userid") int userid,
+      @QueryParam("callback") @DefaultValue("callback") String callback) {
     def dbServer = 'localhost'
     def dbName = 'webapi-example'
     def dbPort = '5432'
@@ -41,9 +45,9 @@ class WebApiResource {
 
     def driver = 'org.postgresql.Driver'
     def sql = Sql.newInstance(url, user, password, driver)
-    def rows = sql.rows("select project_name from project where user_id = ${userid}")
+    def rows = sql.rows("select project_name, url from project where user_id = ${userid}")
 
-    rows.collect{new ResultDto(it["project_name"])}
+    return new JSONWithPadding(new GenericEntity<List<ResultDto>>(rows.collect{new ResultDto(it)}){}, callback);
   }
 }
 
@@ -53,12 +57,14 @@ import javax.xml.bind.annotation.XmlRootElement
 @XmlRootElement
 class ResultDto {
   String projectName
+  String url
 
   ResultDto() {
   }
 
-  ResultDto(projectName) {
-    this.projectName = projectName
+  ResultDto(row) {
+    this.projectName = row["project_name"]
+    this.url = row["url"]
   }
 }
 
