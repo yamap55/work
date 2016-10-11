@@ -9,12 +9,8 @@ public class Main {
 
     public static void main(String[] args) {
         try (ConfigurableApplicationContext ctx = SpringApplication.run(Main.class, args)) {
-            Main m = ctx.getBean(Main.class);
-            m.hello();
+            Hoge h = ctx.getBean(Hoge.class);
+            System.out.println(h);
         }
-    }
-
-    public void hello() {
-        System.out.println("Hello Spring Boot!!");
     }
 }
