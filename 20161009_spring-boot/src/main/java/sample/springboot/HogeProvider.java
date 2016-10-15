@@ -9,6 +9,6 @@ public class HogeProvider {
     @Bean
     public Hoge getHoge() {
         System.out.println("HogeProvider#getHoge()");
-        return new Hoge("hoge provider");
+        return new Hoge();
     }
 }
