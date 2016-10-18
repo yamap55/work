@@ -1,12 +1,10 @@
 package sample.springboot;
 
+import lombok.Data;
+
+@Data
 public class Hoge {
 
-	public int id;
-    public String name;
-
-    @Override
-    public String toString() {
-        return "Hoge [id=" + id + ", name=" + name + "]";
-    }
+	private int id;
+    private String name;
 }

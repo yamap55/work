@@ -19,7 +19,10 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile([
+        'org.springframework.boot:spring-boot-starter-web',
+        'org.projectlombok:lombok:1.16.10'
+    ])
 }
 
 jar.baseName = 'spring-boot-sample'

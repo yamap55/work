@@ -16,8 +16,8 @@ public class HelloController {
         System.out.println(param);
 
         Hoge hoge = new Hoge();
-        hoge.id = 20;
-        hoge.name = "Response";
+        hoge.setId(20);
+        hoge.setName("Response");
 
         return hoge;
     }
