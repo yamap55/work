@@ -4,11 +4,24 @@
 - 場所 : 渋谷ヒカリエ27階 LINE株式会社
 - ハッシュタグ #javacasual
 
+## 概要
+> Java についてカジュアルに語るゾイ
+
+## 関連URL
+- [Java Casual #2](http://java-casual.connpass.com/event/42461/)
+  - 告知ページ
+- [イベント資料一覧](http://java-casual.connpass.com/event/42461/presentation/)
+
 ## 19:30-19:35	@tokuhirom	開会、注意事項伝達等
 - Line Liveで配信。
 - トイレから帰れなくなったらツイートしてください。
 
 ## 19:35-20:05	@sugarlife	診断ツール jcmd を使いこなそう！ (+チョットHeapStats)
+
+### Slide
+  - [jcmd #javacasual](http://www.slideshare.net/YujiKubota/jcmd-68318298)
+
+### メモ
 - JDK9からの診断ツール
 - 今までのjmapなどのツールはExperimental。
   - サポートなどは提供されていない。
@@ -52,6 +65,10 @@ jcmd JShellTool VM.info
 ```
 
 ## 20:05-20:15	@nabedge	foo.properties, foo_ja.propertiesをfoo.yml, foo_ja.ymlに変えようと思った動機と案外面倒だったという話
+### Slide
+[properties, yaml, and me ](http://www.slideshare.net/nabedge/properties-yaml-and-me)
+
+### メモ
 - propertiesファイルのプルリクエスト飛んできてもdiff見てもわからない！！
 - Eclipseは小文字でエンコード、intelliJ IDEAは大文字でエンコードする。
   - IDEによって差分が出てしまう！
@@ -63,6 +80,10 @@ jcmd JShellTool VM.info
 
 ## 20:15-20:30		休憩
 ## 20:30-20:50	@hdkshjm	Jenkins and Maven Repo Tips
+### Slide
+- [SCM, CI and Maven Repo](http://www.slideshare.net/hideakiishijima/scm-ci-and-maven-repo)
+
+### メモ
 - タイトル変わった？？
 - GitHub Enterprise
   - Repository1万
