@@ -29,7 +29,7 @@
 - これらはServiceabilitry Tool（jcmdを含む）
 
 - jcmdとは
-- CLIのLOCAL JVMの process 診断ツール
+  - CLIのLOCAL JVMの process 診断ツール
 
 - PerfCounter
   - JVMCounterを出力
@@ -60,8 +60,9 @@
 ---
 
 - とりあえず怪しいと思ったら以下を実行して欲しい
+  - 色々なものがどばっと出力される。
 ```sh
-jcmd JShellTool VM.info
+jcmd <pid> VM.info
 ```
 
 ## 20:05-20:15	@nabedge	foo.properties, foo_ja.propertiesをfoo.yml, foo_ja.ymlに変えようと思った動機と案外面倒だったという話
@@ -115,15 +116,37 @@ jcmd JShellTool VM.info
   - 改善点らしい。
 
 ## 20:50-20:55	@oklahomers	how to cook lettuce?
-- Redis Client
+### Slide
+- [How to cook lettuce](http://www.slideshare.net/Oklahomer/how-to-cook-lettuce-java-casual)
+
+### メモ
+- lettuce
+  - Redis Client
+  - Redis Cluseterをサポート
+  - ノード情報のキャッシュやコネクションの適切な管理
+
+## メモ補足
+- Redisとは、メモリ上にKey-Valueストア（KVS）を構築することができるソフトウェアの一つ。
 
 ## 20:55-21:10	@komamitsu	Fluency - yet another fluent logger
-- Fluentdとは？
-  - ログの分類？とか。
+### Slide
+- [Fluency - Yet another fluent logger](https://www.slideshare.net/mitsunorikomatsu/fluency-yet-another-fluent-logger)
+
+### メモ
 - Fluencyとは？
   - fluent-loggerより4倍早い
 
+## メモ補足
+- Fluentdとは？
+  - ログ収集をいい感じにやってくれる。
+  - 分類とか、出力とか。
+
 ## 21:10-21:20	@tokuhirom	openjdkをいじるに当たっての心意気の話
+### Slide
+- [Openjdk 入門してみた話](https://www.slideshare.net/tokuhirom/openjdk)
+
+### メモ
+- Oracle JDKはOpen JDKを元に作成されている。
 - 触るのは簡単。
 - @sugarlife さんのスライドを読めばOK
 - シンタックスとか簡単に作れるよー！
