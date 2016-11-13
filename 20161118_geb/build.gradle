@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.seleniumhq.selenium:selenium-firefox-driver:2.31.0'
+    compile group: 'org.gebish', name: 'geb-core', version: '1.0'
+
+}
