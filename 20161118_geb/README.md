@@ -1,4 +1,8 @@
 # Geb メモ
+
+## 注意事項
+- JavaとGroovyは最新版でないと、例外が発生する。
+
 ## Driver
 - Firefox
     - https://developer.mozilla.org/ja/docs/Mozilla/QA/Marionette/WebDriver
