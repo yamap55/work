@@ -1,11 +1,13 @@
 @Grapes([
     @Grab("org.gebish:geb-core:1.0"),
-    @Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.52.0"),
-    @Grab("org.seleniumhq.selenium:selenium-support:2.52.0")
+    @Grab("org.seleniumhq.selenium:selenium-support:3.0.1"),
 ])
+
 import geb.Browser
 
-println "start"
+println "start ${new Date().format('yyyy/MM/dd HH:mm:ss')}"
+
+
 Browser.drive {
     go "http://gebish.org"
 
@@ -16,3 +18,4 @@ Browser.drive {
     assert $("#main h1")*.text() == ["Navigating Content", "Form Control Shortcuts"] 
     assert $("#sidebar .sidemenu a", text: "jQuery-like API").parent().hasClass("selected")
 }
+println "end ${new Date().format('yyyy/MM/dd HH:mm:ss')}"
