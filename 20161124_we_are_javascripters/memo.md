@@ -10,6 +10,7 @@
 >※誰でも怖がらずに登壇できる空気を作りたいだけだけなので、もちろん玄人のみなさんも登壇大歓迎です！！
 
 - [We Are JavaScripters! @1st【初心者登壇歓迎！LT大会】](https://wajs.connpass.com/event/44567/)
+- [ハッシュタグは#wajsらしい](https://twitter.com/hashtag/wajs?src=hash)
 
 ## 最初
 - JavaScriptの勉強会は初。
