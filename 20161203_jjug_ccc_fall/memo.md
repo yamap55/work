@@ -1,7 +1,15 @@
 # jjug ccc fall
 ## 概要
 
+
+---
+10:00 - 11:00
+
 ## 基調講演1 「Be a great engineer!」
+- room A+B+C+D
+
+---
+
 - 審美眼に自信がない
   - 必ずしも自分がアーリーアダプターになる必要はない
   - アーリーアダプターになるにはコストがかかる
@@ -41,3 +49,12 @@
 
 ## f1部屋？
 - 今時SimpleDateFormatは古い、DateTimeFormatterを使う
+
+---
+11:00-12:00
+
+## SpringはどうやってDIしているのか
+- sprint Itegration, spring Batchを使っている
+
+- サンプルのコードを読んでいく形式
+-
