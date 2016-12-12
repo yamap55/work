@@ -21,10 +21,33 @@ public class Main {
     ChromeDriver driver = new ChromeDriver();
 //    driver.get("http://gebish.org");
     FirstPage firstPage =  new FirstPage(driver)
-
     WebDriverWait<WebDriver> wait = new WebDriverWait(driver, 30);
 
+    System.out.println("FirstPage Title : " + driver.getTitle());
+    System.out.println("FirstPage Logo : " + firstPage.getLogo())
+    System.out.println("FirstPage Top Section Name : " + firstPage.getTopSectionName())
+    
+    System.out.println("ÉäÉìÉNÇÉNÉäÉbÉNÅI")
+    SecondPage secondPage = firstPage.linkClick()
+
+    System.out.println("SecondPage Title : " + driver.getTitle());
+    System.out.println("SecondPage Logo : " + firstPage.getLogo())
+    System.out.println("SecondPage Top Section Name : " + firstPage.getTopSectionName())
+
+    println ("*"*10)
+
+    
+    List<WebElement> listaa = driver.findElements(new By.ByTagName("h1"));
+    for (WebElement e : listaa) {
+      System.out.println(e.getText());
+    }
+
     System.out.println(driver.getTitle());
+//    println(alink)
+//    alink[0].click()
+    
+    println("aaaa")
+    
 
     WebElement elem = driver.findElement(By.id("main"));
     List<WebElement> list = elem.findElements(new By.ByTagName("h1"));
@@ -34,7 +57,7 @@ public class Main {
 
     println ("*"*10)
 
-    // XPATHÔøΩ≈ÇÃéwÔøΩÔøΩÔøΩÔøΩÔøΩ¬î\ÔøΩu//div[@id='main']//h1ÔøΩv
+    // XPATH???w??????\?u//div[@id='main']//h1?v
     List<WebElement> lista =   driver.findElements(By.xpath("//div[@id='main']//h1"));
     for (WebElement e : lista) {
       System.out.println(e.getText());
@@ -65,13 +88,28 @@ public class Main {
 
 public class FirstPage {
   WebDriver driver;
+  
   public FirstPage(WebDriver driver) {
     this.driver = driver;
     driver.get("http://gebish.org");
   }
 
   public SecondPage linkClick()  {
+    List<WebElement> alink = driver.findElements(By.xpath("//*[@id='sidebar']/ul/li[2]/a"))
+    alink[0].click()
     return new SecondPage(this.driver);
+  }
+
+  public String getTopSectionName() {
+    List<WebElement> h1 = driver.findElements(new By.ByTagName("h1"));
+    
+    return h1[1].getText()
+  }
+  
+  public String getLogo() {
+    List<WebElement> h1 = driver.findElements(new By.ByTagName("h1"));
+    
+    return h1[0].getText()
   }
 }
 
@@ -80,4 +118,17 @@ public class SecondPage {
   public SecondPage(WebDriver driver) {
     this.driver = driver;
   }
+  
+  public String getLogo() {
+    List<WebElement> h1 = driver.findElements(new By.ByTagName("h1"));
+    
+    return h1[0].getText()
+  }
+
+  public String getTopSectionName() {
+    List<WebElement> h1 = driver.findElements(new By.ByTagName("h1"));
+    
+    return h1[1].getText()
+  }
+
 }
