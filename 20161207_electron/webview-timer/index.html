@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <base target="_blank">
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="menu-bar">
+      <input type="text" id="url" value="http://electron.atom.io/"></input>
+      <span class="button-area">
+        <button onclick="load();">Load</button>
+        <button onclick="opendev();">Open Dev Tool</button>
+      </span>
+      <span>
+        <input type="text" id="time" value="00:00"/>
+        <button onclick="start();">Start</button>
+      </span>
+    </div>
+    <div id="webview_wrapper">
+      <webview class="webview" id="foo"></webview>
+    </div>
+    <script>
+      "use strict"
+      const shell = require('electron').shell;
+      let webview = document.getElementById('foo');
+      webview.addEventListener('new-window', function(e){
+        console.log('Guest window is openning new window: ' + e.url);
+        shell.openExternal(e.url);
+      });
+
+      function load(){
+       let url = document.getElementById("url").value;
+       let webviewEl = document.getElementById("foo");
+       webviewEl.setAttribute("src",url);
+      }
+
+      function opendev(){
+       let webview = document.getElementById("foo");
+       webview.openDevTools();
+      }
+
+      function start() {
+        let timeEl = document.getElementById("time");
+      }
+    </script>
+  </body>
+</html>
