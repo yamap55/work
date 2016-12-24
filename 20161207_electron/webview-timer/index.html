@@ -42,7 +42,24 @@
       }
 
       function start() {
-        let timeEl = document.getElementById("time");
+        setInterval(timer,1000);
+      }
+
+      function timer() {
+        const timeEl = document.getElementById("time");
+        const i = parseInt(timeEl.value) -1;
+        timeEl.value = format(i);
+      }
+
+      function parseInt(s) {
+        const m = s.match(/(\d\d):(\d\d)/);
+        return  m[1] * 60 + (m[2]*1);
+      }
+
+      function format(a) {
+        const m = ("0"+Math.floor(a / 60)).slice(-2)
+        const s = ("0"+ (a % 60)).slice(-2)
+        return m + ":" + s
       }
     </script>
   </body>
