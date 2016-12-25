@@ -4,6 +4,9 @@ const {app} = electron
 // ネイティブブラウザウィンドウを作成するモジュール
 const {BrowserWindow} = electron
 
+// メニュー
+const {Menu} = electron;
+
 // ウィンドウオブジェクトをグローバル参照をしておくこと。
 // しないと、ガベージコレクタにより自動的に閉じられてしまう。
 let win
@@ -16,7 +19,7 @@ function createWindow () {
   win.loadURL(`file://${__dirname}/index.html`)
 
   // DevToolsを開く
-  win.webContents.openDevTools()
+//  win.webContents.openDevTools()
 
   // ウィンドウが閉じられた時に発行される
   win.on('closed', () => {
@@ -44,6 +47,29 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
+Menu.setApplicationMenu(Menu.buildFromTemplate([
+  {
+    label: 'DevTool',
+    submenu: [
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: 'Alt+Command+I',
+        click: ()=> win.toggleDevTools()
+      }
+    ]
+  },
+  {
+    label: 'View',
+    submenu: [
+      {
+        label: 'Toggle Full Screen',
+        accelerator: 'F11',
+        click: ()=> win.isFullScreen() ? win.setFullScreen(false) : win.setFullScreen(true)
+      }
+    ]
+  },
+]));
 
 // このファイルでアプリケーション固有のメインプロセスのコードを読み込むことができる。
 // ファイルを別に分けておいてここでrequireすることもできる。
