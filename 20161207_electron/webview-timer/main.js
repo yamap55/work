@@ -10,13 +10,13 @@ let win
 
 function createWindow () {
   // ブラウザウィンドウの作成
-  win = new BrowserWindow({width: 800, height: 600})
+  win = new BrowserWindow({width : 800, height : 600, fullscreen : true})
 
   // アプリケーションのindex.htmlの読み込み
   win.loadURL(`file://${__dirname}/index.html`)
 
   // DevToolsを開く
-//  win.webContents.openDevTools()
+  win.webContents.openDevTools()
 
   // ウィンドウが閉じられた時に発行される
   win.on('closed', () => {

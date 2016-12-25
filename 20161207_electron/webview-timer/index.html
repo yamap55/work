@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>We Are JavaScripters! @2nd</title>
     <base target="_blank">
+    <script src="js/code.js" ></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -11,11 +12,10 @@
       <input type="text" id="url" value="https://slideck.io/github.com/yamap55/Slide/20161226/electron.md"></input>
       <span class="button-area">
         <button onclick="load();">Load</button>
-        <button onclick="opendev();">Open Dev Tool</button>
       </span>
       <span>
         <input type="text" id="time" value="10:00"/>
-        <button onclick="start();">Start</button>
+        <button onclick="start();" id="timerbtn">Start</button>
       </span>
     </div>
     <div id="webview_wrapper">
@@ -25,42 +25,7 @@
       "use strict"
       const shell = require('electron').shell;
       const webview = document.getElementById('foo');
-      webview.addEventListener('new-window', function(e){
-        console.log('Guest window is openning new window: ' + e.url);
-        shell.openExternal(e.url);
-      });
-
-      function load(){
-       const url = document.getElementById("url").value;
-       const webviewEl = document.getElementById("foo");
-       webviewEl.setAttribute("src",url);
-      }
-
-      function opendev(){
-       const webview = document.getElementById("foo");
-       webview.openDevTools();
-      }
-
-      function start() {
-        setInterval(timer,1000);
-      }
-
-      function timer() {
-        const timeEl = document.getElementById("time");
-        const i = parseIntForString(timeEl.value) -1;
-        timeEl.value = format(i);
-      }
-
-      function parseIntForString(s) {
-        const m = s.match(/(\d\d):(\d\d)/);
-        return  m[1] * 60 + (m[2]*1);
-      }
-
-      function format(a) {
-        const m = ("0"+Math.floor(a / 60)).slice(-2)
-        const s = ("0"+ (a % 60)).slice(-2)
-        return m + ":" + s
-      }
+      webview.addEventListener('new-window', (e) => {shell.openExternal(e.url)});
     </script>
   </body>
 </html>
