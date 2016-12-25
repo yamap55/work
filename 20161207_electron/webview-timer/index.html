@@ -24,20 +24,20 @@
     <script>
       "use strict"
       const shell = require('electron').shell;
-      let webview = document.getElementById('foo');
+      const webview = document.getElementById('foo');
       webview.addEventListener('new-window', function(e){
         console.log('Guest window is openning new window: ' + e.url);
         shell.openExternal(e.url);
       });
 
       function load(){
-       let url = document.getElementById("url").value;
-       let webviewEl = document.getElementById("foo");
+       const url = document.getElementById("url").value;
+       const webviewEl = document.getElementById("foo");
        webviewEl.setAttribute("src",url);
       }
 
       function opendev(){
-       let webview = document.getElementById("foo");
+       const webview = document.getElementById("foo");
        webview.openDevTools();
       }
 
@@ -47,11 +47,11 @@
 
       function timer() {
         const timeEl = document.getElementById("time");
-        const i = parseInt(timeEl.value) -1;
+        const i = parseIntForString(timeEl.value) -1;
         timeEl.value = format(i);
       }
 
-      function parseInt(s) {
+      function parseIntForString(s) {
         const m = s.match(/(\d\d):(\d\d)/);
         return  m[1] * 60 + (m[2]*1);
       }

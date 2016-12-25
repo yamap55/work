@@ -16,7 +16,7 @@ function createWindow () {
   win.loadURL(`file://${__dirname}/index.html`)
 
   // DevToolsを開く
-  win.webContents.openDevTools()
+//  win.webContents.openDevTools()
 
   // ウィンドウが閉じられた時に発行される
   win.on('closed', () => {
