@@ -50,6 +50,10 @@
   - Xcodeは公式から、
   - BoostはHomebrewでインストールすると楽
     - `brew search boost` で確認すると色々あるけど、`brew install boost`でインストールすると最新が入るっぽい。
+  - Toggleの設定ができない（2017/01/05時点）
+- ⌘英かな
+  - [⌘英かな](https://ei-kana.appspot.com/)
+  - Toggleの設定が可能。
 
 ## 疑問点
 - 一回大文字のみ入力可能になったけど、どうやって直せばよかったのか。
