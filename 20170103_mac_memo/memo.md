@@ -11,7 +11,7 @@
 
 ### 公式メモ
 - https://support.apple.com/ja-jp/HT201236
-- とりあえずWindowsのCtrlをcommandに置き換えるといい感じかも。
+- とりあえずWindowsのCtrlをcommandに置き換えるイメージがいい感じかも。
 
 ## 基本操作？
 - 2本指スクロールで画面スクロール
@@ -57,6 +57,12 @@
 - ⌘英かな
   - [⌘英かな](https://ei-kana.appspot.com/)
   - Toggleの設定が可能。
+- git
+  - XCodeのCommandLine Toolsに含まれる？gitでも問題はないが、homebrewのgitに切り替えた方が色々便利。
+  - [MacのHomeBrewでGitを2.7.0にアップデートしよう](http://qiita.com/suzutan/items/44bcf20df711675c525c)
+    - タイトルと違う意味で参考。
+  - [MacのGitで補完を効かせたりブランチ名を表示する設定(Homebrewでgitをインストールした場合)](http://qiita.com/koyopro/items/3fce94537df2be6247a3)
+
 
 ## 疑問点
 - 一回大文字のみ入力可能になったけど、どうやって直せばよかったのか。
