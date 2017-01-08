@@ -67,6 +67,9 @@
     - タイトルと違う意味で参考。
   - [MacのGitで補完を効かせたりブランチ名を表示する設定(Homebrewでgitをインストールした場合)](http://qiita.com/koyopro/items/3fce94537df2be6247a3)
   - [本当に正しい .bashrc と .bash_profile の使ひ分け](http://qiita.com/magicant/items/d3bb7ea1192e63fba850)
+- エスケープ文字
+  - `Option + ¥`
+  - Macでは円マーク（¥）とバックスラッシュ（\）はちゃんと区別される。
 
 
 ## 疑問点
