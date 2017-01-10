@@ -1,16 +1,25 @@
 # 初めてのMacメモ
 ## ショートカット
-- command + c コピー
-- command + v 貼り付け
-- command + space Spotlite検索
-- ctrl + space 日本語切り替え
-- command + ← HOME
-- command + → END
-- ctrl + クリック 右クリックメニュー
-- command + Ctrl + f 最大化切り替え
+### 前提
+− command ⌘
+- shift ⇧
+- option ⌥
+- control ⌃
+- caps lock ⇪
 
-### 公式メモ
+### ショートカットキー
+- <kbd>command + c</kbd> コピー
+- <kbd>command + v</kbd> 貼り付け
+- <kbd>command + space</kbd> Spotlite検索
+- <kbd>ctrl + space</kbd> 日本語切り替え
+- <kbd>command + ←</kbd> HOME
+- <kbd>command + →</kbd> END
+- <kbd>ctrl + クリック</kbd> 右クリックメニュー
+- <kbd>command + Ctrl + f</kbd> 最大化切り替え
+
+### Apple公式ショートカット
 - https://support.apple.com/ja-jp/HT201236
+- ショートカットキーの記載もあり。（「^」がコントロールとか。）
 - とりあえずWindowsのCtrlをcommandに置き換えるイメージがいい感じかも。
 
 ## 基本操作？
@@ -21,7 +30,7 @@
   - OSが出してる的な奴がアプリケーション毎に切り替わる
 - Finder（Explorer的なやつ）で別のフォルダに移動する
   - メニュー → 移動 → フォルダへ移動
-  - Shift + Command + G
+  - <kbd>Shift + Command + G</kbd>
 
 ## 日本語入力の設定
 - 設定 → キーボード → 入力ソース → 日本語
