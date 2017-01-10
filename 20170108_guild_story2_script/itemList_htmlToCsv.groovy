@@ -7,6 +7,13 @@ import org.jsoup.Jsoup
 import org.apache.http.entity.ContentType
 import com.xlson.groovycsv.CsvParser
 
+def outputFilePath = "/Users/yamap_55/work/${new Date().format('yyyyMMdd')}/item_${new Date().format('yyyyMMddHHmmss')}.csv"
+def outputFile = new File(outputFilePath)
+
+if (outputFile.exists()) {
+  outputFile.delete()
+}
+
 def oldItemMasterUrl = $/https://raw.githubusercontent.com/yamap55/guild-story2-search/master/master/item.csv/$
 // 旧アイテムマスターからアイテム情報を取得する。
 def getOldItemInfo = {
@@ -77,12 +84,12 @@ def createRecode = {head, data ->
   result
 }
 
+def l = []
 http.get(
   [path : "/guildmono2/",
   queryString:URLEncoder.encode("アイテム一覧", "EUC-JP"),
   contentType:"text/plain"]) { resp, reader ->
   def doc = Jsoup.parse(reader.text)
-  def l = []
   doc.select(".style_table").each {
     // 種別などもとれるが、結局旧ファイルを読まないと取得できない情報があるのでそちらを使用する。
     // it.parent().previousElementSibling().text()
@@ -103,9 +110,17 @@ http.get(
         }
         d
       }
-      println createRecode(head, data)
+      l << createRecode(head, data)
     }
   }
 }
+outputFile << masterHead.join(",")
+outputFile << "\r\n"
+l.eachWithIndex {d, i ->
+  d[0] = i+1  //ID
+  outputFile << d.join(",")
+  outputFile << "\r\n"
+}
+
 println("新アイテム".center(15, "*"))
 println newItems.join("\n")
