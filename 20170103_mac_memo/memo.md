@@ -96,3 +96,4 @@ Homebrew-cask でインストール可能らしいが、色々不便なところ
 - Sdkman
 - Dropbox
 - Clipy
+- GIMP
