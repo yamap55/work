@@ -1,7 +1,7 @@
 # 初めてのMacメモ
 ## ショートカット
 ### 前提
-− command ⌘
+- command ⌘
 - shift ⇧
 - option ⌥
 - control ⌃
