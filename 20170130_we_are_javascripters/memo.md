@@ -39,6 +39,7 @@
   - Componentには生成されてから削除されるまでにそれぞれのフェーズでフック可能。
 
 ## LT.4：PrimeNGという選択肢 - @shinse
+- [PrimeNGという選択肢について](https://speakerdeck.com/mrdshinse/primengtoiuxuan-ze-zhi-nituite)
 - ライブラリ
 - いわゆる大企業が業務フローを固めるために使うアプリケーション
 - **Angular向けUIライブラリ**
@@ -47,6 +48,7 @@
   - そんなおじさま方にうける。
 
 ## LT.5：ES6で関数型プログラミング - @Kawabata_Lemon
+- [ES6時代の関数型プログラミング](https://speakerdeck.com/kawabatalemon/es6shi-dai-falseguan-shu-xing-puroguramingu)
 - 関数型とは。
 - 値とどう向き合うか。
   - ある入力に対する出力がいつも同じ値を返す
@@ -56,6 +58,7 @@
   - 問題が起こりにくい感覚がみにつく。
 
 ## LT.6：anime.jsがいいらしい - @711fumi
+- [anime.jsがいいらしい](https://speakerdeck.com/711fumi/anime-dot-jsgaiirasii)
 - ロゴが派手
 - 数100行位のシンプルなライブラリ
 - 複雑な動きはできない？
@@ -64,6 +67,7 @@
 - http://anime-js.com/
 
 ## LT.7：サーバサイドエンジニアにこそ試して欲しいBaaS - @moongift
+- [サーバサイドエンジニアにこそ使って欲しいBaaS](https://speakerdeck.com/ncmb/sabasaidoenzinianikososhi-tuteyu-siibaas)
 - [MOONGIFT](http://www.moongift.jp/)の中の人。
 - NCMBMania
 - mbaas
