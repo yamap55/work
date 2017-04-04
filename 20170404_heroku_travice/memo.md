@@ -1,14 +1,12 @@
 # Grailsアプリケーションをtravis CI、Herokuと連携する
+## アジェンダ
+[:contents]
+
 ## 概要
 - タイトルの通りの事をやろうとしたら、結構戸惑ったためメモ。
-  - Grails、Gradle、travis CI、Heroku全てが全くわかっていなかったという事を実感。。。
-- 特に難しいことはしていませんが、誤っている点、もっと簡単な方法等がありましたらコメント、ブコメ、Twitterなどで教えてください。 // TODO リンク貼る
-
-## アジェンダ
-1. Grailsのデフォルトアプリを作成
-2. Herokuで動作させる
-3. GitHubにpush
-4. Travis CIと連携
+  - Grails、Gradle、Travis CI、Heroku全てが全くわかっていなかったという事を実感。。。
+- 尚、Herokuの設定については[公式にドキュメントがあった](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#using-grails-3)上、[サンプルリポジトリ](https://github.com/kissaten/grails3-example)まである事に全部終わってから気づきました。こちらを参照した方が良いかと思います。
+- 特に難しいことはしていませんが、誤っている点、もっと簡単な方法等がありましたらコメント、[ブコメ](http://yamap55.hatenablog.com/entry/2017/03/23/231132)、[Twitter](https://twitter.com/yamap_55)などで教えてください。
 
 ## 環境
 - Grails Version: 3.2.8
@@ -18,7 +16,7 @@
 ## 前準備
 - Javaのインストール
   - Windowsの場合
-    - ここからインストーラを取得して実行
+    - [ここ](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)からインストーラを取得して実行
   - Macの場合
     - SDKMANでインストール
       - ```sdk install java```
@@ -50,62 +48,62 @@
   - 手順は割愛
 
 ## Grailsのデフォルトアプリを作成
-1. grailsコマンドでアプリケーションを作成。
+- grailsコマンドでアプリケーションを作成。
 ```sh
 grails create-app grails-heroku-example2
 ```
-2. アプリケーションを起動
+- アプリケーションを起動
 ```sh
 cd grails-heroku-example2
 ./grailsw run-app
 ```
-3. [http://localhost:8080](http://localhost:8080)にアクセス
+- [http://localhost:8080](http://localhost:8080)にアクセス
 - 以下のような画面が表示されればOK
-![GrailsデフォルトTOP](./pic01.png)
+[f:id:yamap_55:20170405005011p:plain]
 
 ## Herokuで動作させる
-1. ```build.gradle``` にstageタスクを追記
+- ```build.gradle``` にstageタスクを追記
   - [GradleでSpringBoot、Ratpack以外を使用する場合はstageタスクを実行するらしい](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku#verify-that-your-build-file-is-set-up-correctly)
 ```
 task stage {
   dependsOn build
 }
 ```
-2. Procfileをカレントに作成。
+- Procfileをカレントに作成。
   - herokuでアプリケーションを実行するコマンドを記載する。
-  - 今回の場合、作成するwarを起動する。
+  - 今回の場合、javaコマンドで作成されたwarを起動する。（[Scriptとしてwarを起動する方法もあるらしい。](https://www.ntt-tx.co.jp/column/nakano_blog/20161209/)）
 ```
 web: java -Dserver.port=$PORT $JAVA_OPTS -jar build/libs/grails-heroku-example2-0.1.war
 ```
-3. Gitで管理する
+- Gitで管理する
 ```sh
 git init
 git add .
 git commit -m "first commit"
 ```
-4. Heroku　CLIでログイン
+- Heroku　CLIでログイン
   - ```heroku login```
   - メールアドレスとパスワード入力。
-5. Heroku上にアプリケーションを作成
+- Heroku上にアプリケーションを作成
   - ```heroku create grails-heroku-example2```
   - アプリ名は省略も可能。
   - アプリ名はHeroku全体でユニークである必要があるので注意。
-6. リモートリポジトリが追加されていることを確認。
+- リモートリポジトリが追加されていることを確認。
   - ```git remote -v```
 ```
 heroku	https://git.heroku.com/grails-heroku-example2.git (fetch)
 heroku	https://git.heroku.com/grails-heroku-example2.git (push)
 ```
-7. Herokuへデプロイ
+- Herokuへデプロイ
   - ```git push heroku master```
   - ```BUILD SUCCESSFUL```的なメッセージが表示されればOK
-8. 確認
+- 確認
   - ```heroku open```
   - ローカルで実行時と同じ画面が出ればOK
 
 ## GitHubにpush
-1. GitHubにリポジトリを作成
-2. GitHubにpush
+- GitHubにリポジトリを作成
+- GitHubにpush
 ```sh
 git remote add origin git@github.com:yamap55/grails-heroku-example2.git
 git push -u origin master
@@ -125,4 +123,35 @@ touch .travis.yml
 - ```.travis.yml``` に設定を追加
   - ```language: groovy```
   - ファイルの先頭に追加。
-  
+- 設定例
+```
+language: groovy
+deploy:
+  provider: heroku
+  api_key:
+    secure: （略）
+  app: grails-heroku-example2
+  on:
+    repo: yamap55/grails-heroku-example2
+```
+- GitHubにpush
+```sh
+git add .
+git commit -m "comment"
+git push origin
+```
+- 確認
+  - ```heroku open```
+  - herokuのログを確認
+
+## メモ
+- [GrailsのwarをScriptとして起動する方法](https://www.ntt-tx.co.jp/column/nakano_blog/20161209/)もあるらしい。
+
+## 参考URL
+- [Deploying Gradle Apps on Heroku](https://devcenter.heroku.com/articles/deploying-gradle-apps-on-heroku)
+  - Herokuの公式ドキュメント
+- [Heroku Deployment](https://docs.travis-ci.com/user/deployment/heroku/)
+  - Gravis CIの公式ドキュメント
+- [Grails入門して、travis-ciとherokuの連携をしたった](http://kyokomi.hatenablog.com/entry/2014/05/10/171310)
+- [Java1.7のplay2.2でTravis CIからherokuデプロイまでやった](http://kyokomi.hatenablog.com/entry/2014/03/30/213746)
+- [Gradleでherokuアプリケーションを作成する](http://mike-neck.hatenadiary.com/entry/2014/06/14/202008)
