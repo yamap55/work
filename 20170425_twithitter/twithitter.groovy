@@ -4,8 +4,12 @@ import groovy.transform.ToString
 
 println "start"
 
-def resultPath = "/Users/yamap_55/Desktop/twithitter_memo.txt"
-def resultFile = new File(resultPath)
+def batterResultPath = "/Users/yamap_55/Desktop/twithitter_batter.txt"
+def pitcherResultPath = "/Users/yamap_55/Desktop/twithitter_pitcher.txt"
+
+
+def batterResultFile = new File(batterResultPath)
+def pitcherResultFile = new File(pitcherResultPath)
 
 def num = 100000
 
@@ -37,7 +41,8 @@ num.times {
   if (user.isTarget()) {
     def r = "${user.twitterId} : ${user.type} : ${user.status}"
     println r
-    resultFile << "${r}\n"
+    def result = user.isBatter() ? batterResultFile : pitcherResultFile
+    result << "${r}\n"
   }
 }
 println "end"
@@ -56,11 +61,19 @@ class User {
   def status
 
   def getSimpleStatus() {
-    type == "打者" ? status[0..4] : status[0..2]
+    isBatter()? status[0..4] : status[0..2]
+  }
+
+  def isPitcher() {
+    type == "投手"
+  }
+
+  def isBatter() {
+    type == "打者"
   }
 
   def isTarget() {
-    if (type == "投手" && status[0..1].every{it == "Good?"}) {
+    if (isPitcher() && status[0..1].every{it == "Good?"}) {
       // スタミナ確認
       if (status[2] == "Good?") {
         // 先発
