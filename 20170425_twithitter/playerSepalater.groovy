@@ -10,10 +10,10 @@ f.text.eachLine {
   def l = m[0][1].split(",").collect{it.trim()}
 
   // 投手で先発以外
-  def stamina = l.remove(2)
-  if (stamina == "Good?") {
-    return
-  }
+  // def stamina = l.remove(2)
+  // if (stamina == "Good?") {
+  //   return
+  // }
   // 投手で先発以外 ここまで
   if(l.every{it == "Good?"}) {
     println it
