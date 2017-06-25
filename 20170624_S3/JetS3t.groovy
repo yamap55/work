@@ -1,12 +1,11 @@
-println Define.SECRET_KEY
-
+@Grab("net.java.dev.jets3t:jets3t:0.9.4")
 
 import org.jets3t.service.impl.rest.httpclient.RestS3Service
 import org.jets3t.service.model.S3Bucket
 import org.jets3t.service.model.S3Object
 import org.jets3t.service.security.AWSCredentials
 
-@Grab("net.java.dev.jets3t:jets3t:0.9.4")
+// https://stackoverflow.com/questions/22284699/file-upload-to-amazon-s3-via-groovy
 
 accessKey = Define.ACCESS_KEY_ID
 secretKey = Define.SECRET_KEY
