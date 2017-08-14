@@ -7,9 +7,15 @@ import geb.report.CompositeReporter
 import geb.report.ScreenshotReporter
 
 import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.remote.DesiredCapabilities
 
 System.setProperty("webdriver.chrome.driver", "./driver/chromedriver")
 
 driver = {
-    return new ChromeDriver()
+  def options = new ChromeOptions()
+  def capabilities = DesiredCapabilities.chrome()
+  options.addArguments("headless")
+  capabilities.setCapability(ChromeOptions.CAPABILITY, options)
+  new ChromeDriver(capabilities)
 }
