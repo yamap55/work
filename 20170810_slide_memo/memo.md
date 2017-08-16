@@ -70,6 +70,57 @@
 - 先月の[JJUG ナイトセミナー](https://jjug.doorkeeper.jp/events/63161)
 ![Groovy](https://image.slidesharecdn.com/mybatiswebapplication-170726111305/95/mybatis-web-application-27-638.jpg?cb=1501067651)
 
+## Javaをスクリプトとして使う？
+
+## File読み込み
+## 全部読む
+```groovy
+new File("test.txt").text
+```
+
+## 一行づつ読む
+```groovy
+new File("test.txt").eachLine {
+  println it
+}
+```
+
+## CSVを読む
+```
+columnA,columnB,columnC
+hoge1,huga1,piyo1
+hoge2,huga2,piyo2
+hoge3,huga3,piyo3
+```
+
+## CSVを読む
+```groovy
+@Grab('com.xlson.groovycsv:groovycsv:1.1')
+import com.xlson.groovycsv.CsvParser
+
+def csv = new File("test.csv")
+def data = new CsvParser().parse(csv.text, separator: ',')
+data.each {
+  println "${it.columnA} : ${it.columnB} : ${it.columnC}"
+}
+```
+
+## HTTPアクセス
+```groovy
+@Grab("org.codehaus.groovy.modules.http-builder:http-builder:0.7.1")
+import groovyx.net.http.HTTPBuilder
+
+def http = new HTTPBuilder("https://jjug.doorkeeper.jp")
+http.get([path : "/events/63719"]) { res, reader ->
+  println(reader)
+}
+```
+
+## コマンド実行
+```groovy
+println "ls".execute().text
+```
+
 ## 実績
 - 前職
   - 組み込みで使われてた
