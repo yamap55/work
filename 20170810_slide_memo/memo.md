@@ -1,8 +1,15 @@
 
 # 何かしなきゃと思っているあなたにGroovy
+[ビール片手にLT&納涼会 2017](https://jjug.doorkeeper.jp/events/63719) （2017/08/23）
+yamap_55
+
 ## 自己紹介
-- LTなのに自己紹介？
-- 後で勝手に見といてください
+![icon](./icon.gif)
+
+- twitter : yamap_55
+- Javaっ子。
+- Groovy好き
+- 最近JavaScriptが好き
 
 ## 学歴
 - 保育の専門学校
@@ -21,7 +28,9 @@
   - JJUGだし、Javaは使えるよね。。。
 - 何かしなきゃ
 - 今日、先輩に無理やり連れてこられた
-- 他のLTの内容ぶっちゃけマジ理解不能
+
+## 1から1000までの数値が欲しい
+Excel起動しちゃう人
 
 ## Groovyの7つの使い所
 
@@ -86,7 +95,7 @@ new File("test.txt").eachLine {
 ```
 
 ## CSVを読む
-```
+```csv
 columnA,columnB,columnC
 hoge1,huga1,piyo1
 hoge2,huga2,piyo2
@@ -121,6 +130,38 @@ http.get([path : "/events/63719"]) { res, reader ->
 println "ls".execute().text
 ```
 
+## SQL実行
+```groovy
+@Grapes([
+  @Grab("com.h2database:h2:1.4.196"),
+  @GrabConfig(systemClassLoader = true),
+])
+import groovy.sql.Sql
+
+def db = Sql.newInstance("jdbc:h2:mem:", "org.h2.Driver")
+db.execute("create table sample(id int)")
+db.executeUpdate("insert into sample(id) values (99)")
+println db.rows("select * from sample")
+```
+
+## Excel
+```groovy
+@Grapes([
+  @GrabResolver( name='kobo-maven-repo', root='https://github.com/kobo/maven-repo/raw/master/release' ),
+  @Grab("org.jggug.kobo:gexcelapi:0.3"),
+])
+import org.jggug.kobo.gexcelapi.GExcel
+
+println "start"
+
+def path = $/C:\work\hoge.xlsx/$
+def book = GExcel.open(path)
+def sheet = book["sheet1"]
+sheet.rows.each {
+  println "${it[0].value} : ${it[1]}"
+}
+```
+
 ## 実績
 - 前職
   - 組み込みで使われてた
@@ -139,3 +180,8 @@ println "ls".execute().text
 ## その時にGroovyは強い味方です。
 ## 多分Groovy界隈の人はきっと色々呟いていてくれるはずです。
 ## 少なくても私はGroovyに大きな一歩を踏み出す勇気をもらいました。
+
+## Groovyが業務で使用されることはないかもしれません。
+## ただ、一歩を踏み出したいあなたの背中を押してくれます。
+## Groovyを触ってみてください。
+## ご清聴ありがとうございました。
