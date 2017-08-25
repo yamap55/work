@@ -8,7 +8,7 @@ Markdownをスライド表示する[reveal.js](https://github.com/hakimel/reveal
 
 という事で、最終的にはGitHub Pagesとして作成してみました。
 
-## 代替サービス（覚えているものだけ）
+## 調査した代替サービス（覚えているものだけ）
 - [GitPitch](https://gitpitch.com/)
   - ○ GitHubで管理
   - × リポジトリ1つが1スライド
@@ -22,6 +22,12 @@ Markdownをスライド表示する[reveal.js](https://github.com/hakimel/reveal
     - 好きなアプリケーションを入れられない場合があるかも？そもそも自分のPCが使えない場合もあるかも？
   - ○ 結構盛り上がってるっぽい : [参考](http://qiita.com/yhatt/items/0bf65699a538d5508c33)
   - ○ GitHubに☆がいっぱい！ : [参考](https://github.com/yhatt/marp/)
+- [WikiNote](https://wikinote.net/)
+  - △ 匿名
+  - × 誰でも変更可能
+  - × GitHub管理ではない（資料が分散してしまう、芝が生えない）
+  - × スライドモードでスライドが2枚づつ作成されている？
+
 
 ## 手順
 1. [reveal.jsのリポジトリ](https://github.com/hakimel/reveal.js/)から[index.html](https://raw.githubusercontent.com/hakimel/reveal.js/master/index.html)をコピー
