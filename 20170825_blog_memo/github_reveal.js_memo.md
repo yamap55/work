@@ -56,7 +56,15 @@ Markdownをスライド表示する[reveal.js](https://github.com/hakimel/reveal
 7. pushしたindex.htmlにアクセス！
   - http://${ユーザ名}.github.io/${リポジトリ名}/index.html?slide=${リポジトリ名}
 
-## 注意点
+## 残課題
 - スライドで画像などを使用している場合、読み込み元のファイルからの相対パスになります。
   - 階層が異なると、Slide作っている時には画像が確認できません。
-  -
+  - Slide内のPATHを取ってきて置き換えればできそうですが。。。
+
+## PDF出力をする場合
+- [公式](https://github.com/hakimel/reveal.js/#instructions-1)にも記載がありますが、一応記載しておきます。
+- URL末尾に「&print-pdf」を付与して表示。
+  - 例 : http://yamap55.github.io/Slide/index.html?slide=20170827/example1.md&print-pdf
+- ブラウザの印刷設定
+- PDFに保存、横向き、背景のグラフィックにチェック
+- 保存
