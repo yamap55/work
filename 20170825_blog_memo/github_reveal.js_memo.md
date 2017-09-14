@@ -1,4 +1,8 @@
 # MarkdownでSlide作成して自分のGitHub Pagesで公開する
+MarkdownでSlide作成して自分のGitHub Pagesで公開する奴を作りました。
+資料がアチラコチラに散らばることがなく、テキストでGitなので差分が見れたりと結構便利です。
+動きがあるスライドなどは辛いですが、さくっと作る時には良いかと思いますので良かったら使ってみてください。
+
 ## 忙しい人用まとめ
 - SlideをMarkdownで書いて自分のGitHubで管理して、自分のGitHub Pagesで表示できるようにした。
   - reveal.js version 3.5.0を使用
@@ -9,7 +13,7 @@
   - http://yamap55.github.io/SlideWithGitHubPages/index.html?slide=example/slide1.md
   - http://yamap55.github.io/SlideWithGitHubPages/index.html?slide=example/slide2.md
 
-## はじめに
+## 経緯とか
 私はスライド資料をPowerPointやKeynoteで作るのが嫌なのでMarkdownで作成しGitHubで管理しています。((どこでもアクセス可能、履歴、差分見れる、芝生えるとメリットいっぱい))今までは、そのスライドをSlideck(`https://slideck.io/`)というサービス((ボケてなどを作ってる、ゆーすけべーさんが作成。 http://blog.yusuke.be/entry/2016/03/18/150640 ))でスライド表示していたのですが、たまに繋がらない事があったり、HTTPSで警告が出るようになったりとしていて、最近サイト自体が消えてドメインが別の方のものになってました。😂
 
 代替サービスも色々探してはいたのですが中々しっくりくるものに巡り会えず。（一応下の方にまとめておきます。）自分でなんとかしようとなった次第です。
@@ -17,8 +21,6 @@
 Markdownをスライド表示する[reveal.js](https://github.com/hakimel/reveal.js/)は以前少しだけ触ったことがあったので、外部ファイルからファイルを読み込める事ができることは知っていました。なので、GitHubにあるMarkdownファイルを直接読ませたら表示できるのでは？っと読ませたら普通にスライドが表示されました。((raw表示を行うURLを渡しましょう。 https://raw.githubusercontent.com/... ))
 
 という事で、最終的にはGitHub Pagesとして作成してみました。
-
-資料がアチラコチラに散らばることがない、テキストでGitなので差分が見れたりと便利だと思います。動きがあるスライドなどは辛いですが、さくっと作る時には便利だと思いますので、良かったら使ってみてください。
 
 ## 使い方
 ### 初回
