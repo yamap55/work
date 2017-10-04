@@ -14,16 +14,22 @@ SlackletService slackService = new SlackletService(token);
 slackService.addSlacklet(new Slacklet() {
   @Override
   public void onMessagePosted(SlackletRequest req, SlackletResponse resp) {
-    println "test"
+    def botName = slackService.getBot().getUserName()
     // メッセージがユーザーからポストされた
-    // メッセージがポストされたチャンネルを取得する
-    SlackChannel channel = req.getChannel();
-    if ("test_yamashita".equals(channel.getName())) {
-      // #randomチャンネルだった場合
-      // メッセージ本文を取得
-      String content = req.getContent();
-      // メッセージがポストされたチャンネルに対して、BOTからメッセージを送る
-      resp.reply("「" + content + "」て言いましたね。");
+    // メッセージ本文を取得
+    String content = req.getContent();
+    // メッセージがポストされたチャンネルに対して、BOTからメッセージを送る
+    resp.reply("「" + content + "」て言いましたね。");
+  }
+
+  @Override
+  public void onMentionedMessagePosted(SlackletRequest req, SlackletResponse resp) {
+    println "onMentionedMessagePosted"
+    String content = req.getContent();
+    resp.reply("「" + content + "」て言いましたね。");
+    if (content.contains("stop")) {
+      resp.reply("「stop」します。");
+      slackService.stop();
     }
   }
 });
