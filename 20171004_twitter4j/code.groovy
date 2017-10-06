@@ -2,7 +2,7 @@
 import twitter4j.*
 
 /*
-ä»¥ä¸‹ã®ç’°å¢ƒå¤‰æ•°ã‚’è¨­å®š
+ˆÈ‰º‚ÌŠÂ‹«•Ï”‚ğİ’è
 twitter4j.oauth.consumerKey
 twitter4j.oauth.consumerSecret
 twitter4j.oauth.accessToken
@@ -11,14 +11,14 @@ twitter4j.oauth.accessTokenSecret
 
 Twitter twitter = new TwitterFactory().getInstance();
 Query query = new Query();
-// ã€Œ#æ±äº¬ã®å¤©æ°—ã€ã§ã¯ã¤ã¶ã‚„ã‹ãªããªã£ãŸã¿ãŸã„ã€‚
-query.setQuery("from:Yahoo_weather æ±äº¬ã®å¤©æ°—");
+// u#“Œ‹‚Ì“V‹Cv‚Å‚Í‚Â‚Ô‚â‚©‚È‚­‚È‚Á‚½‚İ‚½‚¢B
+query.setQuery("from:Yahoo_weather “Œ‹‚Ì“V‹C");
 query.setCount(1)
 
-// æ¤œç´¢å®Ÿè¡Œ
+// ŒŸõÀs
 QueryResult result = twitter.search(query);
 
-System.out.println("ãƒ’ãƒƒãƒˆæ•° : " + result.getTweets().size());
+System.out.println("ƒqƒbƒg” : " + result.getTweets().size());
 def tw = result.tweets[0]
 println tw.text
 println "${'*'*10}"
