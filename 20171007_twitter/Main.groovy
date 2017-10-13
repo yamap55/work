@@ -15,9 +15,9 @@ class Main {
 
     // TODO 画像の切り抜きがうまく行かず！
     def cap = ImageEditer.subImage(captureInfo.file, captureInfo.x, captureInfo.y, captureInfo.width, captureInfo.height)
-    
+
     def gyazo = new Gyazo("token")
-    def url = gyazo.upload(captureInfo.file,)
+    def url = gyazo.upload(cap)
 
     println url
 
