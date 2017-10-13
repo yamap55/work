@@ -13,9 +13,8 @@ class TwitterExecuter {
   def twitter = new TwitterFactory().getInstance();
   def query = new Query();
 
+  /** 指定された条件で検索し、最新の1件を返す **/
   def tweetSearch(query) {
-    // 「#東京の天気」ではつぶやかなくなったみたい。
-    // query.setQuery("from:Yahoo_weather 東京の天気");
     this.query.query = query
     this.query.count = 1
 
