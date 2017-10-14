@@ -13,8 +13,8 @@ class Main {
     def captureInfo = selenide.getCapture("https://weather.yahoo.co.jp/weather/13/4410.html", [".forecastCity","div"])
     println captureInfo
 
-    // TODO 画像の切り抜きがうまく行かず！
-    def cap = ImageEditer.subImage(captureInfo.file, captureInfo.x, captureInfo.y, captureInfo.width, captureInfo.height)
+    // TODO Macの場合には2倍する必要あり。理由わからず。
+    def cap = ImageEditer.subImage(captureInfo.file, captureInfo.x * 2, captureInfo.y * 2, captureInfo.width * 2, captureInfo.height * 2)
 
     def gyazo = new Gyazo("token")
     def url = gyazo.upload(cap)
