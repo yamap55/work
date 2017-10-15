@@ -49,7 +49,7 @@ class SlackJoin {
           // System.exit(0)
         } else if (content.contains("天気")) {
           def selenide = new SelenideExecuter()
-          def captureInfo = selenide.getCapture("https://weather.yahoo.co.jp/weather/13/4410.html", [".forecastCity","div"])
+          def captureInfo = selenide.getCapture("https://weather.yahoo.co.jp/weather/13/4410.html", [".forecastCity"])
           // println captureInfo
 
           // TODO Macの場合には2倍する必要あり。理由わからず。
