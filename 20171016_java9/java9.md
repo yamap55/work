@@ -26,10 +26,31 @@ Java SE 6が2006/12/11
 ## 参考
 - [新しいリリースモデルはJavaを使う人 全員要注目だった](http://d.hatena.ne.jp/nowokay/20171007#1507284356)
 - [Oracle Java SEサポート・ロードマップ](http://www.oracle.com/technetwork/jp/java/eol-135779-ja.html)
+- [Faster and Easier Use and Redistribution of Java SE](https://orablogs-jp.blogspot.jp/2017/09/faster-and-easier-use-and.html)
+
+---
+
+## リリースモデル
+- 6ヶ月毎に機能リリース
+- 3ヶ月毎にメンテナンス/セキュリティリリース
+- サポート期間は次の機能リリースまで
+- 3年毎に長期サポート付きのLTSリリース
+
+---
+
+## リリースモデル
+- LTSリリースはOracle JDKのみ
+- Oracle JDKは商用及びサポート顧客向け
 
 ---
 
 ##
+
+---
+
+## REPL導入
+- JShell
+- 「Hello World」が簡単に。
 
 ---
 
