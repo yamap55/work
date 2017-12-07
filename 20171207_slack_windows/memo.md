@@ -1,5 +1,8 @@
 # Windowsから定期的にSlackに投稿する
-Windowsのタスクスケジューラでbash上でシェルを動かして、Slackにメッセージを投げる。
+WindowsからSlackにメッセージを投げたい事があって、面倒だろうなと思って調べてみたらあまりにも簡単だったのでメモ。
+一言で言うと「Windowsのタスクスケジューラでbash上でシェルを動かして、Slackにメッセージを投げる。」だけ。
+
+Windows上でシェルが動くと楽で良いですなぁ
 
 ## もうちょっと詳しく
 - 定期実行にはWindowsデフォルトのタスクスケジューラを使用。
@@ -35,8 +38,8 @@ WEBMESSAGE="Hello Slack!"
 curl -s -S -X POST --data-urlencode "payload={\"channel\": \"${CHANNEL}\", \"username\": \"${BOTNAME}\", \"icon_emoji\": \"${FACEICON}\", \"text\": \"${WEBMESSAGE}\" }" ${WEBHOOKURL} > /dev/null
 ```
 
-- 実行
+- タスクスケジューラ起動
+  - Windowsキー → タスクスケジューラ検索
 
 ## 参考
 - [[10分で出来る]シェルスクリプトの結果をslackに投稿](https://qiita.com/tt2004d/items/50d79d1569c0ace118d6)
-
