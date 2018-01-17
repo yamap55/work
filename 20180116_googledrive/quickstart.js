@@ -5,7 +5,7 @@ var googleAuth = require('google-auth-library');
 
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/drive-nodejs-quickstart.json
-var SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly'];
+var SCOPES = ['https://www.googleapis.com/auth/drive'];
 // var TOKEN_DIR = (process.env.HOME || process.env.HOMEPATH ||
 //     process.env.USERPROFILE) + '/.credentials/';
 var TOKEN_DIR = "./secret/"
@@ -20,7 +20,7 @@ fs.readFile(SECRET_JSON, function processClientSecrets(err, content) {
   }
   // Authorize a client with the loaded credentials, then call the
   // Drive API.
-  authorize(JSON.parse(content), listFiles);
+  authorize(JSON.parse(content), a);
 });
 
 /**
@@ -97,31 +97,55 @@ function storeToken(token) {
   console.log('Token stored to ' + TOKEN_PATH);
 }
 
-/**
- * Lists the names and IDs of up to 10 files.
- *
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
-function listFiles(auth) {
+// /**
+ // * Lists the names and IDs of up to 10 files.
+ // *
+ // * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
+ // */
+// function listFiles(auth) {
+  // var service = google.drive('v3');
+  // service.files.list({
+    // auth: auth,
+    // pageSize: 10,
+    // fields: "nextPageToken, files(id, name)"
+  // }, function(err, response) {
+    // if (err) {
+      // console.log('The API returned an error: ' + err);
+      // return;
+    // }
+    // var files = response.files;
+    // if (files.length == 0) {
+      // console.log('No files found.');
+    // } else {
+      // console.log('Files:');
+      // for (var i = 0; i < files.length; i++) {
+        // var file = files[i];
+        // console.log('%s (%s)', file.name, file.id);
+      // }
+    // }
+  // });
+// }
+
+function a(auth) {
+  var fileMetadata = {
+  'name': 'photo.jpg'
+  };
+  var media = {
+    mimeType: 'image/jpeg',
+    body: fs.createReadStream('/Users/yamap_55/Desktop/omocha_robot.png')
+  };
   var service = google.drive('v3');
-  service.files.list({
+  service.files.create({
     auth: auth,
-    pageSize: 10,
-    fields: "nextPageToken, files(id, name)"
-  }, function(err, response) {
+    resource: fileMetadata,
+    media: media,
+    fields: 'id'
+  }, function (err, file) {
     if (err) {
-      console.log('The API returned an error: ' + err);
-      return;
-    }
-    var files = response.files;
-    if (files.length == 0) {
-      console.log('No files found.');
+      // Handle error
+      console.error(err);
     } else {
-      console.log('Files:');
-      for (var i = 0; i < files.length; i++) {
-        var file = files[i];
-        console.log('%s (%s)', file.name, file.id);
-      }
+      console.log('File Id: ', file.id);
     }
   });
 }
