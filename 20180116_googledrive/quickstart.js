@@ -3,6 +3,8 @@ var readline = require('readline');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
 
+// 環境変数「GOOGLE_DRIVE_FOLDER_ID」にGoogle DriveのフォルダIDを設定する。
+
 // If modifying these scopes, delete your previously saved credentials
 // at ~/.credentials/drive-nodejs-quickstart.json
 var SCOPES = ['https://www.googleapis.com/auth/drive'];
@@ -128,7 +130,8 @@ function storeToken(token) {
 
 function a(auth) {
   var fileMetadata = {
-  'name': 'photo.jpg'
+    'name': 'photo.jpg',
+    parents:[process.env.GOOGLE_DRIVE_FOLDER_ID]
   };
   var media = {
     mimeType: 'image/jpeg',
