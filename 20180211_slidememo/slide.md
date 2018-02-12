@@ -15,6 +15,20 @@
 
 ---
 
+## 小学生のプログラミングが話題
+
+![Google 検索](./pic3.png)
+
+---
+
+## こんなキーワードと共によく聞く
+- [Minecraft Education Edition](https://education.minecraft.net/)
+- [Code.org](https://studio.code.org/)
+- [Scratch](https://scratch.mit.edu/)
+- [プログラミングゼミ](https://programmingzemi.com/)
+
+---
+
 ## 2020年度から小学校でプログラミング教育が必修化されます
 
 ---
