@@ -99,7 +99,8 @@
 ## アジェンダ
 - はじめに
 - 「プログラミング的思考」って何？
-- **☆教育用プログラミング言語**
+- **☆学習サイト**
+- 教育用プログラミング言語
 - 中学校、高校は？
 
 ---
@@ -115,10 +116,8 @@
 ![Hour of Code 2](./pic5.png)
 
 ---
-
+## Scratch
 ![](./pic6.png)
-
----
 
 
 ---
@@ -151,7 +150,7 @@
 - [小学校段階におけるプログラミング教育の在り方について（議論の取りまとめ）](http://www.mext.go.jp/b_menu/shingi/chousa/shotou/122/attach/1372525.htm)
 - [「プログラミング」と「プログラミング的思考」の違いを、分かったつもりになれるヒント](http://senseicode.club/2-cs-vs-programming)
 - [【コラム】プログラミング的思考とは何か？再び。](http://dig-learning.hatenablog.com/entry/2017/11/29/165803)
-
+- [EdTechZine（エドテックジン）](https://edtechzine.jp/)
 
 ---
 
