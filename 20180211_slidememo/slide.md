@@ -26,12 +26,14 @@
 ## こんなキーワードと共によく聞く
 - [Minecraft Education Edition](https://education.minecraft.net/)
 - [Hour of Code](http://hourofcode.jp/)（[Code.org](https://studio.code.org/)）
-- [Scratch](https://scratch.mit.edu/)
 - [プログラミングゼミ](https://programmingzemi.com/)
+- [Scratch](https://scratch.mit.edu/)
+- [Viscuit](https://www.viscuit.com/)
 
 ---
 
 ## 2020年度から小学校でプログラミング教育が必修化されます
+- 学習指導要領が改定
 
 ---
 
@@ -65,7 +67,12 @@
 ・コンピュータの働きを自分の生活に生かそうとする態度を身に付けること
 ```
 
-[小学校段階におけるプログラミング教育の在り方について](http://www.mext.go.jp/b_menu/shingi/chousa/shotou/122/attach/1372525.htm)
+- [小学校段階におけるプログラミング教育の在り方について](http://www.mext.go.jp/b_menu/shingi/chousa/shotou/122/attach/1372525.htm)
+- [議論の取りまとめ](http://www.mext.go.jp/b_menu/shingi/chukyo/chukyo3/074/siryo/__icsFiles/afieldfile/2016/07/07/1373891_5_1_1.pdf)
+
+---
+
+![小学校段階におけるプログラミング教育の在り方について（議論の取りまとめ）](./pic9.png)
 
 ---
 
@@ -99,6 +106,47 @@
 ## アジェンダ
 - はじめに
 - 「プログラミング的思考」って何？
+- **☆実践事例**
+- 学習サイト
+- 教育用プログラミング言語
+- 中学校、高校は？
+
+---
+
+## 具体的にどうやるの？
+文部科学省が公開している[プログラミング教育実践ガイド](http://jouhouka.mext.go.jp/school/programming_zirei/)を紹介
+
+---
+
+## [しゃくとり虫を動かそう](http://jouhouka.mext.go.jp/school/pdf/shogaku_01.pdf)
+- 1年生
+- 生活科、特別活動
+- しゃくとり虫の絵を書いて、Viscuitを使用して動かす。
+
+---
+
+## [めざせ！行列のできるおすし屋さん！](http://jouhouka.mext.go.jp/school/pdf/shogaku_02.pdf)
+- 4年生
+- 図画工作
+- プロロボUSBプラス、プロロボUSBエディタを使用して、回転寿司のように皿が乗ったロボットを動かす。
+
+---
+
+## [プログラムロボット学習](http://jouhouka.mext.go.jp/school/pdf/shogaku_03.pdf)
+- 4,5,6年生
+- 総合的な学習の時間
+- レゴマインドストームのEV3ソフトウェアプログラミングのLabViewを使用してロボットを動かす。
+
+---
+
+現状は、環境も先生たちの教育も全然足りておらず、現場はかなり厳しいとの事。
+
+
+---
+
+## アジェンダ
+- はじめに
+- 「プログラミング的思考」って何？
 - **☆学習サイト**
 - 教育用プログラミング言語
 - 中学校、高校は？
@@ -116,9 +164,38 @@
 ![Hour of Code 2](./pic5.png)
 
 ---
-## Scratch
-![](./pic6.png)
 
+## [プログラミングゼミ](https://programmingzemi.com/)
+![](./pic7.png)
+
+---
+
+## アジェンダ
+- はじめに
+- 「プログラミング的思考」って何？
+- 学習サイト
+- **☆教育用プログラミング言語**
+- 中学校、高校は？
+
+---
+
+## [Scratch](https://scratch.mit.edu/)
+![](./pic6.png)
+- [作品](https://scratch.mit.edu/projects/204748305/)
+
+---
+
+## [Viscuit](https://www.viscuit.com/)
+![](./pic8.png)
+
+---
+
+## アジェンダ
+- はじめに
+- 「プログラミング的思考」って何？
+- 学習サイト
+- 教育用プログラミング言語
+- **☆中学校、高校は？**
 
 ---
 
@@ -145,6 +222,14 @@
 
 ---
 
+そんな熱い小学生のプログラミング教育なので、ビジネスとしてもかなり熱い
+
+---
+
+![Google 検索](./pic3.png)
+
+---
+
 ## 参考URL
 - [学習指導要領等、小学校学習指導要領](http://www.mext.go.jp/a_menu/shotou/new-cs/1384661.htm)
 - [小学校段階におけるプログラミング教育の在り方について（議論の取りまとめ）](http://www.mext.go.jp/b_menu/shingi/chousa/shotou/122/attach/1372525.htm)
@@ -155,7 +240,6 @@
 ---
 
 
-![Google 検索](./pic3.png)
 
 
 ---
