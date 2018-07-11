@@ -1,6 +1,7 @@
 # SQLAlchemyでAUTO_INCREMENTされた値を取得したい
 ## 結論
-addした後にflushすると、addしたオブジェクトに設定されている。
+- addした後にflushすると、addしたオブジェクトに設定されている。
+  - exuecuteで実行する場合には返り値から取得できる？（[参考](https://www.yamamanx.com/sqlalchemy-insert-auto_increment-primarykey/)）
 
 ## 環境
 - MySQL 5.7（Cloud SQL）
