@@ -29,6 +29,6 @@ df1 = pd.DataFrame(ar)
 print(df1) # 1列3行でHogeオブジェクトが設定される（当たり前）
 
 # 最終的にこうなりました。
-df2 = pd.DataFrame(list(map(lambda hoge: hoge.__dict__, ar)))
+df2 = pd.DataFrame(list(map(lambda hoge: vars(hoge), ar)))
 print(df2)
 ```
