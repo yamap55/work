@@ -6,13 +6,15 @@
 ## 結論
 ### mainのスクリプト（main.py）
 ```python
+import sys
 import hoge
-from logging import basicConfig, getLogger, DEBUG
+from logging import basicConfig, getLogger, DEBUG, StreamHandler
 
 # メインファイルに記載
 # フォーマットの詳細はドキュメント参照（ https://docs.python.jp/3/library/logging.html#logrecord-attributes ）
 FORMAT = '%(asctime)s %(levelname)s %(name)s %(message)s'
-basicConfig(level=DEBUG, format=FORMAT)
+# handlersでstdoutを指定しないとstrerrに出力される
+basicConfig(level=DEBUG, format=FORMAT, handlers=[StreamHandler(sys.stdout)])
 
 # 日付フォーマットの指定が必要な場合はdatefmtを設定
 # DATE_FORMAT = '%Y/%m/%d %H:%M:%S'
