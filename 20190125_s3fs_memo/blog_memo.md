@@ -2,7 +2,7 @@
 ## はじめに
 PythonsからS3をいじる際に、これまではaws cliを直接叩いていたのですが、s3fsを使用するとexistsやlsみたいなわかりやすい名称で使えるというのをどこかで知ったので使ってみた。
 
-同名でS3をマウントするもの（https://github.com/s3fs-fuse/s3fs-fuse）もあるようですが、本記事でのs3fs（https://github.com/dask/s3fs）とは別物です。
+同名でS3をマウントするもの（ https://github.com/s3fs-fuse/s3fs-fuse ）もあるようですが、本記事でのs3fs（ https://github.com/dask/s3fs ）とは別物です。
 で、キャッシュのせいかファイルを置いた直後にexistsするとFalseだったりと整合性がとれなくてハマった話です。
 
 ## s3fsとは
@@ -21,13 +21,13 @@ PythonsからS3をいじる際に、これまではaws cliを直接叩いてい�
 
 インストールして（[詳細](https://s3fs.readthedocs.io/en/latest/install.html)）
 
-```
+```sh
 pip install s3fs
 ```
 
 以下のように書けばOK
 
-```
+```python
 import s3fs
 fs = s3fs.S3FileSystem(anon=True)
 list = fs.ls('my-bucket')
@@ -44,7 +44,7 @@ list = fs.ls('my-bucket')
 具体的には下記のコード参照。
 （実際に試したい場合には↓↓に全コード書いたので、そちらをオススメ。）
 
-```
+```python
 import s3fs
 
 fs = s3fs.S3FileSystem(key=key, secret=secret)
@@ -95,7 +95,7 @@ except FileNotFoundError:
     - なので、途中のPATHではFileNotFoundなのもまぁ間違いではない気もしなくもない。が、直感的ではない。
 
 ## 全コード
-```
+```python
 import s3fs
 
 key = 'xxxxxxxxxx'
