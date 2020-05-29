@@ -15,38 +15,51 @@ import pyperclip
 # 日本語の疑似変換は未対応（対応は容易だが面倒なので）
 
 my_str_list = [
-    """!pip install "https://github.com/megagonlabs/ginza/releases/download/latest/ginza-latest.tar.gz"
+    """\
+class O:
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value
+    def hoge(self):
+        return 'hoge'
 """,
-    """import pkg_resources, imp
-imp.reload(pkg_resources)
+    """\
+obj1 = O('tokyo', 'yoitoko')
+print(obj1.name)
+print(obj1.value)
+obj1.value = 'waruitoko'
+print(obj1.value)
 """,
-    """import spacy
-nlp = spacy.load('ja_ginza')
+    """\
+o = globals()['O']
+obj2 = o('japan', 'maxamaxa')
 """,
-    """
-doc = nlp("今日は東京でピザパーティー。権兵衛さんの赤ちゃんが風邪ひいた。")
+    """\
+print(getattr(obj2, 'name'))
+print(getattr(obj2, 'value'))
 """,
-    """for s in doc.sents:
-  for t in s:
-    info = [t.orth_, t._.reading, t.tag_]
-    print(info)
+    """\
+setattr(obj2, 'value', 'yoitoko')
+print(getattr(obj2, 'value'))
 """,
-    """from spacy import displacy
-displacy.render(doc, style='dep', jupyter=True, options={'distance': 90})
+    """\
+assert hasattr(obj2, 'hoge')
 """,
-    """
-displacy.render(doc, style='ent', jupyter=True, options={'distance': 90})
+    """\
+func = getattr(obj2, 'hoge')
+print(func())
 """,
-    """doc = nlp("NHKから国民を守る党から国民を守る党から国民を守る党から国民を守る党")
-displacy.render(doc, style='dep', jupyter=True, options={'distance': 90})
+    """\
+import pandas as pd
+data = {'col1': [1, 2], 'col2': [3, 4]}
+df = pd.DataFrame(data=data)
+df
 """,
-    """doc1 = nlp('このラーメンは美味しいなあ')
-doc2 = nlp('カレーでも食べに行こうよ')
-doc3 = nlp('ごめん、同窓会には行けません')
-""",
-    """print(doc1.similarity(doc2))
-print(doc2.similarity(doc3))
-print(doc3.similarity(doc1))
+    """\
+import importlib
+pd = importlib.import_module('pandas')
+df = getattr(pd, 'DataFrame')(data=data)
+df
 """,
 ]
 
