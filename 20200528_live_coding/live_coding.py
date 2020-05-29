@@ -128,10 +128,11 @@ if __name__ == "__main__":
         # サブホットキーの設定：使用するアプリの他のショートカットと重複しないように
         keyboard.add_hotkey("ctrl+i", my_sub_func, args=(1,))
 
-        print("Press ESC to stop.")
+        print("Press CTRL + ESC to stop.")
 
-        keyboard.wait("esc")
-        print("esc-END")
+        # ESCだとjupyter notebook操作時に無意識に触ってしまうので CTRL+ESCに変更
+        keyboard.wait("ctrl + esc")
+        print("ctrl+esc-END")
 
     except Exception:
         import traceback
