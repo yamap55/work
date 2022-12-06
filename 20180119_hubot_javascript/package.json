@@ -9,6 +9,6 @@
   "author": "yamap55",
   "license": "ISC",
   "dependencies": {
-    "hubot": "^2.19.0"
+    "hubot": "^3.3.2"
   }
 }
